@@ -46,7 +46,7 @@ export const RoomSection = ({ roomsDate, userData, pathPost }) => {
         // Call the delete API
         try {
             // Make a POST request to your Node.js backend
-            const response = await callApi(`http://azhar-env.eba-832eva2b.us-east-1.elasticbeanstalk.com/api/room/delete-rooms`, 'DELETE', formData, setLoading, setError);
+            const response = await callApi(`${process.env.REACT_APP_API_URL_LOCAL}api/room/delete-rooms`, 'DELETE', formData, setLoading, setError);
             if (response.status === 200) {
                 setSuccessMessage("Room information posted successfully.");
                 setErrorMessage(null); // Clear any previous error message

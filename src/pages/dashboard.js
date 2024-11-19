@@ -43,7 +43,7 @@ export const DashboardPage = () => {
                 }
 
                 // Make API call to fetch user data based on user ID
-                const response = await callApi(`http://azhar-env.eba-832eva2b.us-east-1.elasticbeanstalk.com/api/user/get-user?id=${userId}`, 'GET', headerData, setLoading, setError, token);
+                const response = await callApi(`${process.env.REACT_APP_API_URL_LOCAL}api/user/get-user?id=${userId}`, 'GET', headerData, setLoading, setError, token);
 
 
                 if (response.status === 200) {

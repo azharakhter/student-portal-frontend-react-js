@@ -37,7 +37,7 @@ export const UpdateUserForm = ({userData}) => {
                 Authorization: `Bearer ${token}`
               }
         }
-        const response = await callApi(`http://azhar-env.eba-832eva2b.us-east-1.elasticbeanstalk.com/api/user/update-user`, 'PUT', values, setLoading, setError,headerData);
+        const response = await callApi(`${process.env.REACT_APP_API_URL_LOCAL}api/user/update-user`, 'PUT', values, setLoading, setError,headerData);
         if (response.status === 200) {
             setSuccessMessage("User are updated successfully");
             setErrorMessage(null); // Clear any previous error message

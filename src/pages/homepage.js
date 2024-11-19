@@ -20,7 +20,7 @@ export const HomePage = () => {
     useEffect(() => {
     try {
         const FetchRoomDate = async () => {
-            const getRoomDate =  await callApi(`http://azhar-env.eba-832eva2b.us-east-1.elasticbeanstalk.com/api/room/get-room?page=1&per_page=10`, 'GET', null, setLoading, setError);
+            const getRoomDate =  await callApi(`${process.env.REACT_APP_API_URL_LOCAL}api/room/get-room?page=1&per_page=10`, 'GET', null, setLoading, setError);
             
             setRooms(getRoomDate?.result?.data?.data);
         }

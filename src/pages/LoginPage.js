@@ -33,7 +33,7 @@ export const LoginPage = () => {
 
     const handleSubmit = async (values) => {
 
-        const response = await callApi(`localhost:8080/api/user/login`, 'POST', values, setLoading, setError);
+        const response = await callApi(`${process.env.REACT_APP_API_URL_LOCAL}api/user/login`, 'POST', values, setLoading, setError);
         
 
 

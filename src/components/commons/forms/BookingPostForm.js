@@ -52,7 +52,7 @@ export const BookingPostForm = ({ modelData }) => {
 
             console.log("updatedValues",updatedValues)
             // Make a POST request to your Node.js backend
-            const response = await callApi(`http://azhar-env.eba-832eva2b.us-east-1.elasticbeanstalk.com/api/room/book-room`, 'POST', updatedValues, setLoading, setError);
+            const response = await callApi(`${process.env.REACT_APP_API_URL_LOCAL}api/room/book-room`, 'POST', updatedValues, setLoading, setError);
             if (response.status === 200) {
                 setSuccessMessage("your request for the Room are submitted successfully.Room agent will contact you as soon as possibale");
                 setErrorMessage(null); // Clear any previous error message

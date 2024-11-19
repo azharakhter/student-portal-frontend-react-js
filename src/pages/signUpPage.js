@@ -30,7 +30,7 @@ export const SignUpPage = () => {
 
     const handleSubmit = async (values) => {
 
-        const response = await callApi(`localhost:8080/api/user/signup`, 'POST', values, setLoading, setError);
+        const response = await callApi(`${process.env.REACT_APP_API_URL_LOCAL}api/user/signup`, 'POST', values, setLoading, setError);
         if (response.status === 200) {
             setSuccessMessage("User are created Successfully please login to dashboard");
             setErrorMessage(null); // Clear any previous error message

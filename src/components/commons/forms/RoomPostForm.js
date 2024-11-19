@@ -85,7 +85,7 @@ export const RoomPostForm = ({userData}) => {
         formData.append('images', imageFiles);
         
         try {
-            const response = await callApi(`http://azhar-env.eba-832eva2b.us-east-1.elasticbeanstalk.com/api/room/add-room`, 'POST', formData, setLoading, setError);
+            const response = await callApi(`${process.env.REACT_APP_API_URL_LOCAL}api/room/add-room`, 'POST', formData, setLoading, setError);
             if (response.status === 200) {
                 setSuccessMessage("Room information posted successfully.");
                 setErrorMessage(null); // Clear any previous error message
